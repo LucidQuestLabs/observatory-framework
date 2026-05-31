@@ -8,7 +8,7 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 
 - Created at: 2026-05-31
 - Created by: Codex
-- Status: triaged
+- Status: accepted
 - Severity: moderate
 - Type: deployment
 - Target ID: repo_setup
@@ -20,7 +20,7 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Next action: In a fresh terminal, run `gh auth login --hostname github.com --git-protocol https --web`, then rerun the repo creation and push commands.
 - Owner: human / Codex
 - Due / revisit date: before first remote push
-- Resolution:
+- Resolution: GitHub repo was created through the web/app path and local pushes now work. Full-path `gh.exe` fallback remains documented for future sessions.
 - Lesson to fold back into SOPs: Publish setup docs should include a PATH-refresh note and a full-path fallback for newly installed CLI tools.
 
 ### snag_20260531_branch-rename-permission
@@ -46,7 +46,7 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 
 - Created at: 2026-05-31
 - Created by: Codex
-- Status: triaged
+- Status: accepted
 - Severity: moderate
 - Type: deployment
 - Target ID: repo_setup
@@ -58,14 +58,14 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Next action: Complete `gh auth login`, then run `gh repo create LucidQuestLabs/observatory-framework --private --source . --remote origin --push` or create the repo manually and run `git remote add origin ...; git push -u origin main`.
 - Owner: human / Codex
 - Due / revisit date: before Netlify Git integration
-- Resolution:
+- Resolution: GitHub repo exists and push flow is working. Connector limitation remains documented as an environment capability note.
 - Lesson to fold back into SOPs: Publish flow should define fallback paths for connector-limited environments.
 
 ### snag_20260531_netlify-ci-interactive-auth
 
 - Created at: 2026-05-31
 - Created by: Codex
-- Status: triaged
+- Status: resolved
 - Severity: moderate
 - Type: deployment
 - Target ID: netlify_publish
@@ -77,7 +77,7 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Next action: In Netlify web UI, connect project `observatory-framework` to GitHub repo `LucidQuestLabs/observatory-framework`, set branch `main`, publish directory `site`, and leave build command empty.
 - Owner: human / Codex via browser
 - Due / revisit date: before relying on push-to-publish automation
-- Resolution:
+- Resolution: Netlify project is connected and GitHub push-to-publish was verified by live site update.
 - Lesson to fold back into SOPs: Keep manual deploy as a verified fallback before attempting CI/webhook setup; treat interactive provider authorization as a separate rollout task.
 
 ### snag_20260531_authorization-boundary
@@ -119,3 +119,5 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Lesson to fold back into SOPs: Global ledgers may mirror target ledgers; validation should distinguish mirrored records from conflicting records.
 
 ## Resolved / Accepted Snags
+
+Resolved and accepted snags may remain listed above during early project formation so the full setup narrative is easy to inspect. As the log grows, move closed entries under this section or into dated archive files.

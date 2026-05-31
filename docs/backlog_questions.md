@@ -1,5 +1,7 @@
 # Backlog Questions
 
+See `docs/founding_decisions.md` for current provisional answers and operating defaults. The questions below remain the broader decision backlog.
+
 ## Scope and Domain
 
 1. What exact geography should the first MVP target cover?
@@ -47,4 +49,3 @@
 3. How should anonymous sources be treated?
 4. What is the escalation path for serious allegations?
 5. What is the correction policy after publication?
-

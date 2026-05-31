@@ -1,6 +1,6 @@
 # GitHub Push-to-Publish Flow
 
-This repository is ready for a simple GitHub-to-Netlify deployment flow.
+This repository uses a simple GitHub-to-Netlify deployment flow.
 
 ## Local Git Baseline
 
@@ -9,9 +9,13 @@ This repository is ready for a simple GitHub-to-Netlify deployment flow.
 - Netlify config: `netlify.toml`
 - CI workflow: `.github/workflows/validate.yml`
 
-## Create the GitHub Repository
+## Repository
 
-Create a new GitHub repository under `LucidQuestLabs`, then connect this local repository:
+- GitHub repository: `https://github.com/LucidQuestLabs/observatory-framework`
+- Netlify site: `https://observatory-framework.netlify.app`
+- Netlify project: `https://app.netlify.com/projects/observatory-framework`
+
+Historical setup command:
 
 ```powershell
 git remote add origin https://github.com/LucidQuestLabs/observatory-framework.git
@@ -31,16 +35,12 @@ Use `--public` instead of `--private` only when the baseline is intentionally pu
 
 ## Netlify Setup
 
-In Netlify:
+Configured target:
 
-1. Add a new site from Git.
-2. Select the GitHub repository.
-3. Set the production branch to `main`.
-4. Set publish directory to `site`.
-5. Leave build command empty.
-6. Deploy.
-
-If the site already exists from CLI setup, open project `observatory-framework` in Netlify and connect it to GitHub from the project settings instead of creating a second site.
+- Production branch: `main`
+- Publish directory: `site`
+- Build command: empty
+- Production URL: `https://observatory-framework.netlify.app`
 
 The included `netlify.toml` already declares:
 
@@ -68,7 +68,7 @@ git commit -m "Describe the corpus update"
 git push
 ```
 
-GitHub Actions will re-run corpus validation after push. Netlify will deploy the static site when the GitHub push reaches `main`.
+GitHub Actions should run corpus validation after push. Netlify deploys the static site when the GitHub push reaches `main`.
 
 ## Manual Deploy Fallback
 

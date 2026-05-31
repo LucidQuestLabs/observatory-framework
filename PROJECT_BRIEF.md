@@ -27,6 +27,8 @@ The framework is:
 - Agentic-framework agnostic.
 - Modular enough to become a dashboard, API, database-backed ledger, or consulting product later.
 
+Current founding decisions and provisional defaults are recorded in `docs/founding_decisions.md`.
+
 ## MVP Boundary
 
 The MVP does need a clear folder structure, stable schemas, source discipline, review workflow, append-only ledger, simple report generation, and agent SOPs.

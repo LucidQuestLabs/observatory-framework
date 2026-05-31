@@ -10,6 +10,7 @@
 ## Phase 1: First Target Packet
 
 - Select one data center, cluster, or issue lens.
+- Anchor founding decisions before live-source work.
 - Register 10-25 sources.
 - Extract 20-50 pending observations.
 - Prepare review packet.

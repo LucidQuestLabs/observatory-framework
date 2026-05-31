@@ -17,6 +17,7 @@ Agents propose reviewable artifacts. Humans approve, reject, annotate, escalate,
 The baseline corpus is the reusable operating system for future investigations:
 
 - `PROJECT_BRIEF.md` explains purpose, scope, and MVP boundaries.
+- `docs/founding_decisions.md` anchors current operating decisions and open founding questions.
 - `sops/` defines repeatable workflows.
 - `schemas/` defines portable JSON schemas for sources, observations, entities, facilities, review packets, dossiers, and action items.
 - `prompts/` gives role prompts for agentic frameworks.
