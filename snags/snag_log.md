@@ -61,4 +61,23 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Resolution:
 - Lesson to fold back into SOPs: Publish flow should define fallback paths for connector-limited environments.
 
+### snag_20260531_netlify-ci-interactive-auth
+
+- Created at: 2026-05-31
+- Created by: Codex
+- Status: triaged
+- Severity: moderate
+- Type: deployment
+- Target ID: netlify_publish
+- Related files: `netlify.toml`, `docs/github_publish_flow.md`, `.gitignore`
+- Summary: Netlify production deploy works, but GitHub continuous deployment setup requires an interactive GitHub authorization flow that the terminal session cannot complete reliably.
+- What happened: `netlify sites:create` created and linked the site, and `netlify deploy --prod --dir site` deployed successfully. `netlify init --git-remote-name origin` prompted for GitHub authorization and terminated in the non-interactive shell. `netlify init --manual` also terminated at the build-command prompt.
+- Why it matters: The live site exists, but automatic deploy-on-push still needs one browser-based Netlify configuration pass.
+- Current workaround: Use manual production deploys with `netlify deploy --prod --dir site` until the GitHub integration is completed in Netlify's web UI.
+- Next action: In Netlify web UI, connect project `observatory-framework` to GitHub repo `LucidQuestLabs/observatory-framework`, set branch `main`, publish directory `site`, and leave build command empty.
+- Owner: human / Codex via browser
+- Due / revisit date: before relying on push-to-publish automation
+- Resolution:
+- Lesson to fold back into SOPs: Keep manual deploy as a verified fallback before attempting CI/webhook setup; treat interactive provider authorization as a separate rollout task.
+
 ## Resolved / Accepted Snags

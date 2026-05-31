@@ -40,6 +40,8 @@ In Netlify:
 5. Leave build command empty.
 6. Deploy.
 
+If the site already exists from CLI setup, open project `observatory-framework` in Netlify and connect it to GitHub from the project settings instead of creating a second site.
+
 The included `netlify.toml` already declares:
 
 ```toml
@@ -67,3 +69,17 @@ git push
 ```
 
 GitHub Actions will re-run corpus validation after push. Netlify will deploy the static site when the GitHub push reaches `main`.
+
+## Manual Deploy Fallback
+
+If GitHub continuous deployment is not connected yet, publish the current static site directly:
+
+```powershell
+& 'C:\Users\bucke\AppData\Roaming\npm\netlify.cmd' deploy --prod --dir site
+```
+
+Current project:
+
+- Netlify site: `observatory-framework`
+- Production URL: `https://observatory-framework.netlify.app`
+- Admin URL: `https://app.netlify.com/projects/observatory-framework`

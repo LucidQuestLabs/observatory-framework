@@ -16,3 +16,6 @@ site/public/data/
 sources/raw/private/
 sources/raw/embargoed/
 
+
+# Local Netlify folder
+.netlify
