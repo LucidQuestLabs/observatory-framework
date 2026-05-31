@@ -43,3 +43,5 @@ Use for public-interest work with restricted working files.
 
 The `site/` directory is intentionally simple and can be published by Netlify without a build step. It should expose methodology and public-ready reports, not raw restricted investigation materials.
 
+See `docs/github_publish_flow.md` for the GitHub-to-Netlify push flow.
+

@@ -27,6 +27,7 @@ The baseline corpus is the reusable operating system for future investigations:
 - `snags/` stores process snags, blockers, surprises, and iteration lessons.
 - `docs/` stores architecture, roadmap, data dictionary, glossary, and deployment notes.
 - `site/` provides a minimal static public surface for Netlify or other static hosts.
+- `.github/workflows/validate.yml` validates the corpus on GitHub pushes and pull requests.
 
 ## MVP Success Criteria
 
@@ -42,3 +43,7 @@ The MVP is complete when it can produce, review, preserve, and summarize one min
 - Use careful public-interest language and avoid unsupported accusations.
 - Keep public, restricted, private, and embargoed materials clearly marked.
 - Capture workflow snags early so the process improves without burying friction in chat history.
+
+## Publishing
+
+The static public surface lives in `site/` and is configured for Netlify through `netlify.toml`. See `docs/github_publish_flow.md` for the GitHub-to-Netlify setup and push process.
