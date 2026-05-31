@@ -58,7 +58,7 @@ def main() -> int:
     paths = [ROOT / "ledger" / "observations_approved.jsonl"]
     paths.extend((ROOT / "targets").glob("**/observations_approved.jsonl"))
     errors: list[str] = []
-    seen: set[str] = set()
+    seen: dict[str, dict] = {}
 
     for path in paths:
         for line_number, record in iter_jsonl(path):
@@ -67,10 +67,10 @@ def main() -> int:
                 continue
             errors.extend(validate_observation(path, line_number, record))
             observation_id = record.get("observation_id")
-            if observation_id in seen:
-                errors.append(f"{path}:{line_number}: duplicate observation_id {observation_id}")
+            if observation_id in seen and seen[observation_id] != record:
+                errors.append(f"{path}:{line_number}: conflicting duplicate observation_id {observation_id}")
             if observation_id:
-                seen.add(observation_id)
+                seen[observation_id] = record
 
     if errors:
         print("\n".join(errors), file=sys.stderr)
@@ -81,4 +81,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

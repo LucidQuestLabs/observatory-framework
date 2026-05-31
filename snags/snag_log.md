@@ -99,4 +99,23 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Resolution: Added explicit change authorization requirements to SOP 00 and Governance.
 - Lesson to fold back into SOPs: State-changing actions require scoped human authorization even when the change is small or intended as a test.
 
+### snag_20260531_global-target-ledger-duplicates
+
+- Created at: 2026-05-31
+- Created by: Codex
+- Status: resolved
+- Severity: minor
+- Type: ledger
+- Target ID: texas_range_cobalt_mesa
+- Related files: `scripts/validate_observations.py`, `ledger/observations_approved.jsonl`, `targets/data_centers/texas_range_cobalt_mesa/observations_approved.jsonl`
+- Summary: Validator treated mirrored approved observations in global and target ledgers as duplicate errors.
+- What happened: The merge script correctly copied target-approved faux observations into the global ledger, but validation counted matching target/global records as duplicate IDs.
+- Why it matters: The intended MVP pattern keeps both target-local ledgers and a global approved ledger.
+- Current workaround: Validator now permits duplicate observation IDs only when the mirrored records match exactly.
+- Next action: Consider adding a dedicated ledger reconciliation test as automation grows.
+- Owner: Codex
+- Due / revisit date:
+- Resolution: Updated validator to flag only conflicting duplicate records.
+- Lesson to fold back into SOPs: Global ledgers may mirror target ledgers; validation should distinguish mirrored records from conflicting records.
+
 ## Resolved / Accepted Snags

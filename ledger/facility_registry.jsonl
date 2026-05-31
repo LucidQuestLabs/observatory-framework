@@ -1,1 +1,1 @@
-
+{"facility_id":"fac_cobalt-mesa-campus_synth1","name":"Cobalt Mesa Compute Campus","facility_type":"data_center","status":"proposed","address":"Synthetic Texas Range corridor location","coordinates":{"lat":null,"lon":null},"jurisdiction":"Fictional Mesa Verde County, Texas","associated_entities":["ent_lone-star-compute_synth1","ent_cobalt-mesa-digital_synth2","ent_rangebuild_synth4"],"source_ids":["src_20260531_mesa-verde-agenda_a1b2c3","src_20260531_parcel-sketch_p7q8r9"],"notes":"Synthetic demonstration facility. Not real evidence.","review_status":"approved"}
