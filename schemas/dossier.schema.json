@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/dossier.schema.json",
+  "title": "Dossier",
+  "type": "object",
+  "required": ["dossier_id", "target_id", "created_at", "status", "approved_observation_ids"],
+  "properties": {
+    "dossier_id": { "type": "string" },
+    "target_id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "status": { "type": "string", "enum": ["draft_internal", "reviewed_internal", "public_ready", "published", "redacted"] },
+    "title": { "type": "string" },
+    "summary": { "type": "string" },
+    "approved_observation_ids": { "type": "array", "items": { "type": "string" } },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "recommended_next_actions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

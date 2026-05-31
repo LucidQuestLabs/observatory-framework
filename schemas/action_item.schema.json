@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/action_item.schema.json",
+  "title": "Action Item",
+  "type": "object",
+  "required": ["action_id", "created_at", "target_id", "description", "status"],
+  "properties": {
+    "action_id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "target_id": { "type": "string" },
+    "description": { "type": "string" },
+    "owner": { "type": "string" },
+    "priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
+    "status": { "type": "string", "enum": ["open", "in_progress", "blocked", "done", "cancelled"] },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

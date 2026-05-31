@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/review_packet.schema.json",
+  "title": "Review Packet",
+  "type": "object",
+  "required": ["packet_id", "created_by", "created_at", "target_id", "scope", "sources_added", "proposed_observations", "open_questions"],
+  "properties": {
+    "packet_id": { "type": "string" },
+    "created_by": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "target_id": { "type": "string" },
+    "scope": { "type": "string" },
+    "review_priority": { "type": "string", "enum": ["low", "normal", "high", "urgent"] },
+    "executive_summary": { "type": "string" },
+    "sources_added": { "type": "array", "items": { "$ref": "source.schema.json" } },
+    "proposed_observations": { "type": "array", "items": { "$ref": "observation.schema.json" } },
+    "contradictions_or_issues": { "type": "array", "items": { "type": "string" } },
+    "open_questions": { "type": "array", "items": { "type": "string" } },
+    "recommended_next_actions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}
+

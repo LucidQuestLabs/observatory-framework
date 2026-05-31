@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Observatory Framework</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Observatory Framework</div>
+      <nav aria-label="Primary">
+        <a href="#method">Method</a>
+        <a href="#corpus">Corpus</a>
+        <a href="#deployment">Deployment</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Evidence-led infrastructure intelligence</p>
+          <h1>Source-backed observations for public-interest research.</h1>
+          <p>
+            A human-reviewed framework for collecting, preserving, analyzing, and publishing structured observations about AI data centers and other complex infrastructure systems.
+          </p>
+        </div>
+      </section>
+
+      <section id="method" class="band">
+        <div class="content">
+          <h2>Core Loop</h2>
+          <ol class="steps">
+            <li><span>Source</span><p>Register primary and contextual evidence before extracting claims.</p></li>
+            <li><span>Observation</span><p>Create atomic, source-backed records with confidence and interpretation labels.</p></li>
+            <li><span>Review</span><p>Human reviewers approve, reject, clarify, restrict, or escalate.</p></li>
+            <li><span>Ledger</span><p>Approved observations are appended to durable JSONL ledgers.</p></li>
+            <li><span>Dossier</span><p>Reports and briefings are generated from reviewed observations.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="corpus" class="band alt">
+        <div class="content two-column">
+          <div>
+            <h2>Baseline Corpus</h2>
+            <p>
+              The corpus includes SOPs, schemas, prompts, templates, review checklists, ledgers, target workspaces, and documentation. It is plain-file-first so agents and humans can inspect every step.
+            </p>
+          </div>
+          <div class="compact-list">
+            <a href="../PROJECT_BRIEF.md">Project brief</a>
+            <a href="../docs/architecture.md">Architecture</a>
+            <a href="../docs/data_center_research_surface.md">Research surface</a>
+            <a href="../review/reviewer_checklist.md">Reviewer checklist</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="deployment" class="band">
+        <div class="content">
+          <h2>Deployment</h2>
+          <p>
+            This static surface can be deployed with Netlify using the included <code>netlify.toml</code>. Public reports should be exported here only after review and redaction.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

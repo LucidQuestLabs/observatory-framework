@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/entity.schema.json",
+  "title": "Entity",
+  "type": "object",
+  "required": ["entity_id", "name", "entity_type", "review_status"],
+  "properties": {
+    "entity_id": { "type": "string", "pattern": "^ent_[a-z0-9-]+_[a-z0-9]+$" },
+    "name": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "entity_type": { "type": "string", "enum": ["company", "agency", "utility", "developer", "landowner", "contractor", "community_group", "law_firm", "municipality", "other"] },
+    "jurisdictions": { "type": "array", "items": { "type": "string" } },
+    "known_relationships": { "type": "array", "items": { "type": "object" } },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "review_status": { "type": "string", "enum": ["pending", "approved", "flagged"] }
+  },
+  "additionalProperties": false
+}
+

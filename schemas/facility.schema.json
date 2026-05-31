@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/facility.schema.json",
+  "title": "Facility",
+  "type": "object",
+  "required": ["facility_id", "name", "facility_type", "status", "review_status"],
+  "properties": {
+    "facility_id": { "type": "string", "pattern": "^fac_[a-z0-9-]+_[a-z0-9]+$" },
+    "name": { "type": "string" },
+    "facility_type": { "type": "string", "enum": ["data_center", "substation", "power_plant", "water_facility", "fiber_route", "land_parcel", "other"] },
+    "status": { "type": "string", "enum": ["proposed", "permitted", "under_construction", "operational", "cancelled", "unknown"] },
+    "address": { "type": "string" },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lat": { "type": ["number", "null"] },
+        "lon": { "type": ["number", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "jurisdiction": { "type": "string" },
+    "associated_entities": { "type": "array", "items": { "type": "string" } },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "string" },
+    "review_status": { "type": "string", "enum": ["pending", "approved", "flagged"] }
+  },
+  "additionalProperties": false
+}
+

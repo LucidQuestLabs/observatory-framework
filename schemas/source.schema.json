@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://observatory-framework.local/schemas/source.schema.json",
+  "title": "Source",
+  "type": "object",
+  "required": ["source_id", "title", "source_type", "retrieval_date", "access_level", "review_status"],
+  "properties": {
+    "source_id": { "type": "string", "pattern": "^src_[0-9]{8}_[a-z0-9-]+_[a-z0-9]+$" },
+    "title": { "type": "string" },
+    "source_type": { "type": "string", "enum": ["permit", "filing", "article", "meeting_minutes", "transcript", "pdf", "dataset", "image", "court_record", "property_record", "public_records_response", "other"] },
+    "publisher": { "type": "string" },
+    "author": { "type": "string" },
+    "publication_date": { "type": ["string", "null"], "format": "date" },
+    "retrieval_date": { "type": "string", "format": "date" },
+    "url": { "type": "string" },
+    "local_path": { "type": "string" },
+    "jurisdiction": { "type": "string" },
+    "access_level": { "type": "string", "enum": ["public", "restricted", "private", "embargoed"] },
+    "reliability_notes": { "type": "string" },
+    "hash": { "type": "string" },
+    "archived_snapshot": { "type": "boolean" },
+    "review_status": { "type": "string", "enum": ["unreviewed", "reviewed", "flagged"] }
+  },
+  "additionalProperties": false
+}
+

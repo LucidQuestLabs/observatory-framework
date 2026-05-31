@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local artifacts
+.DS_Store
+Thumbs.db
+
+# Generated exports
+reports/public/generated/
+site/public/data/
+
+# Sensitive local source drops
+sources/raw/private/
+sources/raw/embargoed/
+
