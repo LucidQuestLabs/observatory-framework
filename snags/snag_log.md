@@ -80,4 +80,23 @@ Use this file for project-wide blockers, surprises, workflow friction, and proce
 - Resolution:
 - Lesson to fold back into SOPs: Keep manual deploy as a verified fallback before attempting CI/webhook setup; treat interactive provider authorization as a separate rollout task.
 
+### snag_20260531_authorization-boundary
+
+- Created at: 2026-05-31
+- Created by: Codex
+- Status: resolved
+- Severity: major
+- Type: process
+- Target ID: governance
+- Related files: `sops/SOP_00_master_workflow.md`, `GOVERNANCE.md`
+- Summary: Agent made and committed a small local site test marker without pausing for explicit authorization immediately before local/prod-affecting changes.
+- What happened: A Netlify push-to-publish test marker was added and committed locally. The push did not occur, but the local commit happened before the human authorization boundary was formalized.
+- Why it matters: Observatory Framework needs a clear human-in-the-loop rule for local file modifications, commits, pushes, and production deploy actions.
+- Current workaround: Human explicitly authorized updating the SOP and pushing with version control.
+- Next action: Apply the authorization rule to core SOP and governance docs before pushing.
+- Owner: Codex
+- Due / revisit date: immediate
+- Resolution: Added explicit change authorization requirements to SOP 00 and Governance.
+- Lesson to fold back into SOPs: State-changing actions require scoped human authorization even when the change is small or intended as a test.
+
 ## Resolved / Accepted Snags

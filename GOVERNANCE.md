@@ -8,6 +8,10 @@ Agents may create draft sources, proposed observations, review packets, and doss
 
 Public outputs should only use approved observations unless explicitly marked as draft or internal. Sensitive materials require redaction and, when appropriate, legal or editorial review before publication.
 
+## Change Authorization
+
+Human authorization is required before agents modify local files, stage changes, create commits, push to remotes, or trigger production deployment changes. Approval should identify the intended scope. Agents must not treat general collaboration as blanket authorization for local or production state changes.
+
 ## Correction Policy
 
 Approved observations should not be silently edited. Corrections, disputes, and refinements are recorded as new entries in `ledger/corrections.jsonl` or as new observations that reference `supersedes` and `superseded_by`.
@@ -18,4 +22,3 @@ Approved observations should not be silently edited. Corrections, disputes, and 
 - `restricted`: available to trusted reviewers or partners.
 - `private`: internal only.
 - `embargoed`: held for later release or legal/editorial review.
-

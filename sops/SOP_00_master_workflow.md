@@ -25,6 +25,18 @@ Coordinate the end-to-end Observatory loop from target definition through source
 9. Generate briefings or dossiers only from approved observations unless explicitly marked draft/internal.
 10. Record corrections, supersessions, unresolved contradictions, and next research actions.
 
+## Change Authorization
+
+Agents must keep the human lead in the loop before making state-changing moves. Unless the human has already authorized the specific scope, pause for approval before:
+
+- Modifying local corpus, source, report, site, or configuration files.
+- Staging or committing changes.
+- Pushing to a remote repository.
+- Triggering or modifying production deployment state.
+- Changing public/private/restricted/embargoed publication posture.
+
+When approval is granted, state the intended scope, execute only that scope, and report the resulting commit, push, or deployment status.
+
 ## Outputs
 
 - `target_profile.md`
@@ -35,4 +47,3 @@ Coordinate the end-to-end Observatory loop from target definition through source
 - Updated ledgers
 - Draft or final dossier
 - Open questions and next actions
-
