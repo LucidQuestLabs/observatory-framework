@@ -20,6 +20,15 @@ git push -u origin main
 
 If you choose a different repository name, replace the remote URL.
 
+If GitHub CLI is installed during the session and `gh` is not yet on PATH, either open a fresh terminal or call it directly:
+
+```powershell
+& 'C:\Program Files\GitHub CLI\gh.exe' auth login --hostname github.com --git-protocol https --web
+& 'C:\Program Files\GitHub CLI\gh.exe' repo create LucidQuestLabs/observatory-framework --private --source . --remote origin --push
+```
+
+Use `--public` instead of `--private` only when the baseline is intentionally public.
+
 ## Netlify Setup
 
 In Netlify:
@@ -58,4 +67,3 @@ git push
 ```
 
 GitHub Actions will re-run corpus validation after push. Netlify will deploy the static site when the GitHub push reaches `main`.
-
